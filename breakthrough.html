@@ -20,6 +20,7 @@
         var y = canvas.height-30;
         var dx = 2;
         var dy = -2;
+        var blockSize = 6;
 
         function drawBall(){
             ctx.beginPath();
@@ -28,10 +29,17 @@
             ctx.fill();
             ctx.closePath();
         }
+        
+        function block(genX, genY) {
+         
+            ctx.rect(genX, genY, blockSize, blockSize/2);
+            
+        }
 
         function draw(){
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             drawBall();
+            block(50, 50);
             x += dx;
             y += dy;
         }
